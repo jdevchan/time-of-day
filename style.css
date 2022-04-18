@@ -1,0 +1,31 @@
+body {
+    background: purple;
+    font: normal 15pt Arial;
+}
+
+header {
+    text-align: center;
+    color: #fff;
+}
+
+#card {
+    width: 500px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    margin: auto;
+    text-align: center;
+}
+
+#img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+    color: #fff;
+}
