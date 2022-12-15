@@ -1,18 +1,13 @@
-const hours = setInterval(function () {
+function load() {
+    var msg = document.getElementById('msg')
+    var img = document.getElementById('img')
+
+    var date = new Date()
     
-    const msg = document.getElementById('msg')
-    const img = document.getElementById('img')
+    var hours = date.getHours()
+    var min = date.getMinutes()
 
-    const date = new Date()
-    
-    const hours = date.getHours()
-    const min = date.getMinutes()
-
-    function zero(num) {
-        return num >= 10 ? num: `0${num}`;
-    }
-
-    const verb = hours >= 0 && hours <= 1
+    var verb = hours >= 0 && hours <= 1
 
     if(verb) {
         verb = "é"
@@ -20,7 +15,7 @@ const hours = setInterval(function () {
         verb = "são"
     }
 
-    msg.innerHTML = `Agora ${verb} ${zero(hours) + ':' + zero(min)}hs.`
+    msg.innerHTML = `Agora ${verb} ${hours + ':' + min}hs.`
 
     if(hours >= 5 && hours < 12) {
         img.setAttribute('src', 'images/manha.jpg')
@@ -32,4 +27,5 @@ const hours = setInterval(function () {
         img.setAttribute('src', 'images/noite.jpg')
         document.body.style.background = '#515154'
     }
-})
+
+}
