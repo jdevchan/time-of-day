@@ -1,4 +1,5 @@
-function load() {
+const hours = setInterval(function () {
+    
     var msg = document.getElementById('msg')
     var img = document.getElementById('img')
 
@@ -27,5 +28,4 @@ function load() {
         img.setAttribute('src', 'images/noite.jpg')
         document.body.style.background = '#515154'
     }
-
-}
+})
