@@ -1,13 +1,16 @@
-function load() {
-    var msg = document.getElementById('msg')
-    var img = document.getElementById('img')
+setInterval(function() {
+    let msg = document.getElementById('msg')
+    let img = document.getElementById('img')
 
-    var date = new Date()
+    let date = new Date()
     
-    var hours = date.getHours()
-    var min = date.getMinutes()
+    let hours = date.getHours()
+    let min = date.getMinutes()
 
-    var verb = hours >= 0 && hours <= 1
+    if (hours < 10) hours = '0' + hours;
+    if (min < 10) min = '0' + min;
+
+    let verb = hours >= 0 && hours <= 1
 
     if(verb) {
         verb = "é"
@@ -27,5 +30,4 @@ function load() {
         img.setAttribute('src', 'images/noite.jpg')
         document.body.style.background = '#515154'
     }
-
-}
+});
