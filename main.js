@@ -1,14 +1,18 @@
 const hours = setInterval(function () {
     
-    var msg = document.getElementById('msg')
-    var img = document.getElementById('img')
+    const msg = document.getElementById('msg')
+    const img = document.getElementById('img')
 
-    var date = new Date()
+    const date = new Date()
     
-    var hours = date.getHours()
-    var min = date.getMinutes()
+    const hours = date.getHours()
+    const min = date.getMinutes()
 
-    var verb = hours >= 0 && hours <= 1
+    function zero(num) {
+        return num >= 10 ? num: `0${num}`;
+    }
+
+    const verb = hours >= 0 && hours <= 1
 
     if(verb) {
         verb = "é"
@@ -16,7 +20,7 @@ const hours = setInterval(function () {
         verb = "são"
     }
 
-    msg.innerHTML = `Agora ${verb} ${hours + ':' + min}hs.`
+    msg.innerHTML = `Agora ${verb} ${zero(hours) + ':' + zero(min)}hs.`
 
     if(hours >= 5 && hours < 12) {
         img.setAttribute('src', 'images/manha.jpg')
